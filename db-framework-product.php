@@ -62,52 +62,73 @@ class DB_FrameWork_Products {
 		add_action( 'save_post', array( &$this, 'process' ), 10, 2 );
 	}
 	function meta_fields() {
-	/*
+	
 		$meta_array = array (
 			// unique ID, title, callback function, post-type, context (location), priority, filter-type
 			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
-			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
+			array( 'db-framework-products-cat', esc_html__( 'Product Category', 'enter category here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'alphanumstr' ),
+			array( 'db-framework-products-tags', esc_html__( 'Product Tags', 'enter tags here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'alphanumstr' /* is_array */ ),
+			array( 'db-framework-products-rank', esc_html__( 'Product Rank', 'enter rank here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'float' ),
+			array( 'db-framework-products-cpa', esc_html__( 'CPA Value', 'enter CPA here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'float' /* is_array */ ),
+			array( 'db-framework-products-conv', esc_html__( 'Affiliate URL', 'enter conversion rate here' /* should be automatically generated */ ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'float' ),
+			array( 'db-framework-products-epc', esc_html__( 'Product EPC', 'enter EPC here' /* should be automatically calculated */ ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'float' ),
+			array( 'db-framework-products-int-rating', esc_html__( 'Internal Rating', 'enter internal rating here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'float' ),
+			array( 'db-framework-products-ext-rating', esc_html__( 'External Rating', 'enter external rating here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'float' ),
+			array( 'db-framework-products-win-size', esc_html__( 'Window size', 'enter size here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'int' /* is_array */ ),
+			array( 'db-framework-products-disp-url', esc_html__( 'Display URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
+			array( 'db-framework-products-price', esc_html__( 'Price', 'enter price here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'float' ),
+			array( 'db-framework-products-price_freq', esc_html__( 'Charge frequency', 'enter frequency here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'alphanumstr' /* can be array */ ),
+			array( 'db-framework-products-custom', esc_html__( 'Custom Field', 'enter custom text here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'filterstr' ),
+			array( 'db-framework-products-sku', esc_html__( 'Product SKU', 'enter SKU here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'alphanumstr' ),
+			array( 'db-framework-products-aff-name', esc_html__( 'Affiliate Name', 'enter affiliate here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'alphanumstr' ),
+			array( 'db-framework-products-int-notes', esc_html__( 'Affiliate Notes', 'enter notes here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'filterstr' ),
+			array( 'db-framework-products-short-url', esc_html__( 'Short URL', 'enter short url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' ),
+			array( 'db-framework-products-aff-url', esc_html__( 'Affiliate URL', 'enter url here' ), array( &$this, 'meta_display' ), 'db_product', 'side', 'default', 'url' )
 		);
-		*/
+		foreach ( $meta_array as $meta_entry ) {
+		$hypen_name = $meta_array[0];
+		$filter_type = $meta_array[6];
 		add_meta_box(
-				'db-framework-products-aff-url',				// Unique ID
-				esc_html__( 'Affiliate URL', 'enter url here' ),		// Title
-				array( &$this, 'meta_display' ),				// Callback function
-				'db_product',										// Admin page (or post type)
-				'side',										// Context
-				'default'									// Priority
+				$meta_array[0],					// Unique ID
+				$meta_array[1],					// Title
+				$meta_array[2],					// Callback function  -- is constant [could define static]
+				$meta_array[3],					// Admin page (or post type) -- is constant [could define static]
+				$meta_array[4],					// Context
+				$meta_array[5],					// Priority -- is constant [could define static]
+				array( 'name'=>$hyphen_name, 'filter'=>$filter_type )
 		);
+		}
+	}
+	function underscore ( $base ) {
+		return str_replace( "-", "_", $base);
 	}
 	function meta_display ( $object, $box ) {
-		wp_nonce_field( basename( __FILE__ ), 'db_framework_products_aff_url_nonce' );
+	/*
+	USAGE:
+	echo $box['args']['foo'];
+	echo $box['args']['bar'];
+	*/
+		wp_nonce_field( basename( __FILE__ ), $this->underscore($box['args']['name']).'nonce' );
 		echo <<<html
 			<p>
-				<label for="db-framework-products-aff-url">
+				<label for="
 html;
-		echo _e( "Enter affiliate URL for product.", 'example' );
+		echo $box['args']['name'];
+		echo <<<html
+		">
+html;
+		echo _e( "Enter affiliate URL for product.", 'example' ); /* should be custom per meta field -- pass during callback */
 		echo <<<html
 		</label>
 				<br />
-				<input class="widefat" type="text" name="db-framework-products-aff-url" id="db-framework-products-aff-url" value="
+				<input class="widefat" type="text" name="
 html;
-		echo esc_attr( get_post_meta( $object->ID, 'db_framework_products_aff_url', true ) );
+		echo $box['args']['name']."\" id=\"".$box['args']['name']."\" ";
+		
+		echo <<<html
+				value="
+html;
+		echo esc_attr( get_post_meta( $object->ID, $this->underscore($box['args']['name']), true ) );
 		echo <<<html
 " size="30" />
 			</p>

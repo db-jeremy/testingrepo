@@ -1,0 +1,55 @@
+/* Thunder-FrameWork-SliderKnob CSS
+ * @author Jeremy Hough / Digital Brands
+ * @copyright 2012 Digital Brands
+ */
+
+.sliderbox {
+	-moz-box-shadow:    2px 4px 5px 6px #ddd;
+	-webkit-box-shadow: 2px 4px 5px 6px #ddd;
+	box-shadow:         2px 4px 5px 6px #ddd;
+	background-color: #eee !important;
+	height:200px;
+	margin-bottom:30px;
+	padding-left:20px;
+	padding-right:20px;
+	overflow: hidden;
+}
+
+.sliderbox-container-notched, .sliderbox-container-unnotched {
+	height:140px;
+	margin-bottom:30px;
+	padding-right:20px;
+	overflow: hidden;
+}
+
+.slider-pane {
+	margin-top:15px;
+	margin-right:3px;
+	-moz-box-shadow:    2px 4px 3px 3px #f4f4f4;
+	-webkit-box-shadow: 2px 4px 3px 3px #f4f4f4;
+	box-shadow:         2px 4px 3px 3px #f4f4f4;
+    min-width: 120px;
+    overflow: hidden;
+    display: table-cell;
+	vertical-align: top;
+}
+
+.tdr-ui-slider-notched, .tdr-ui-slider-unnotched {
+	-moz-box-shadow:    2px 4px 3px 3px #aaa;
+	-webkit-box-shadow: 2px 4px 3px 3px #aaa;
+	box-shadow: 		2px 4px 3px 3px #aaa;
+	background-color:#bbb;
+	border-radius: 10px;
+	height:12px;
+	width:400px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.tdr-ui-slider-notched img, .tdr-ui-slider-unnotched img {
+	width:25px;
+	height:25px;
+	border-radius: 15px;
+	position:relative;
+	top:-5px;
+}

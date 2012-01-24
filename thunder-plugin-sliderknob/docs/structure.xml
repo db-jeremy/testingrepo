@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<project version="0.17.2" title="">
+  <file path="\thunder-framework-sliderbox.php" hash="dc39dd158e2591b113f89bd1ff575d40" package="thunder-plugin-sliderknob">
+    <docblock>
+      <description>Slider Knob</description>
+      <long-description>&lt;p&gt;Provides a content box which contains content which is panned left and right through a viewport by sliding a knob horizontally&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;p&gt;Usage:&lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp; [tdr_framework_sliderknob notched="{true|false}"][slider]Content pane for first entry[/slider][slider]Content pane for second entry[/slider][/tdr_framework_sliderknob]&lt;/p&gt;</long-description>
+      <tag line="27" name="author" description="Jeremy Hough &lt;jeremy@digitalbrands.com&gt;"/>
+      <tag line="27" name="copyright" description="2012 Digital Brands Inc."/>
+      <tag line="27" name="license" description="GPL2"/>
+      <tag line="27" name="package" description="thunder-plugin-sliderknob"/>
+      <tag line="27" name="version" description="0.0.1 alpha"/>
+    </docblock>
+    <function namespace="default" line="47" package="thunder-plugin-sliderknob">
+      <name>sliderbox_scripts</name>
+      <type>function</type>
+      <docblock>
+        <description>Registers all necessary scripts used for sliderknob so WordPress knows about them. Triggered on WordPress's "wp_enqueue_scripts" event.</description>
+        <long-description/>
+        <tag line="43" name="package" description="thunder-plugin-sliderknob"/>
+      </docblock>
+    </function>
+    <function namespace="default" line="83" package="thunder-plugin-sliderknob">
+      <name>sliderloader</name>
+      <type>function</type>
+      <docblock>
+        <description>Conditionally loads all necessary scripts used for sliderknob based on the type of sliderknob used (notched vs unnotched) and if there are any sliders present or not. Triggered on WordPress's "wp_footer" event.</description>
+        <long-description/>
+        <tag line="77" name="var" description="Global variable stating whether to load slider scripts" type="boolean">
+          <type by_reference="false">boolean</type>
+        </tag>
+        <tag line="77" name="var" description="Global variable array listing which types of sliders are present on the page, if any" type="array">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="77" name="package" description="thunder-plugin-sliderknob"/>
+      </docblock>
+    </function>
+    <function namespace="default" line="109" package="thunder-plugin-sliderknob">
+      <name>sliderknob_func</name>
+      <type>function</type>
+      <docblock>
+        <description>Defines the behavior of the "tdr_framework_sliderknob" shortcode. Triggered by regular WordPress add_shortcode() function.</description>
+        <long-description/>
+        <tag line="97" name="param" description="Array of shortcode attributes" type="array" variable="$atts">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="97" name="param" description="The content of the shortcode" type="string" variable="$content">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="97" name="var" description="Global variable stating whether to load slider scripts" type="boolean">
+          <type by_reference="false">boolean</type>
+        </tag>
+        <tag line="97" name="var" description="Global variable array listing which types of sliders are present on the page, if any" type="array">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="97" name="var" description="A counter for the number of sliders on the page" type="int">
+          <type by_reference="false">int</type>
+        </tag>
+        <tag line="97" name="var" description="An array containing the content of individual slider content-panes" type="array">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="97" name="var" description="Contains the content panes for each sliderknob instance" type="array">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="97" name="package" description="thunder-plugin-sliderknob"/>
+        <tag line="97" name="return" description="Contains all content of the sliderknob instance, including individual content-panes and the sliderknob itself" type="string">
+          <type by_reference="false">string</type>
+        </tag>
+      </docblock>
+      <argument line="109">
+        <name>$atts</name>
+        <default/>
+        <type/>
+      </argument>
+      <argument line="109">
+        <name>$content</name>
+        <default>null</default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="default" line="156" package="thunder-plugin-sliderknob">
+      <name>slider_func</name>
+      <type>function</type>
+      <docblock>
+        <description>Defines the behavior of the "slider" shortcode. Triggered by regular WordPress add_shortcode() function.</description>
+        <long-description/>
+        <tag line="147" name="param" description="Array of shortcode attributes" type="array" variable="$atts">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="147" name="param" description="The content of the shortcode" type="string" variable="$content">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="147" name="var" description="x Holds the slider count" type="int">
+          <type by_reference="false">int</type>
+        </tag>
+        <tag line="147" name="var" description="A counter for the number of sliders on the page" type="int">
+          <type by_reference="false">int</type>
+        </tag>
+        <tag line="147" name="var" description="An array containing the content of individual slider content-panes. Values are pushed to the array each time this function is triggered." type="array">
+          <type by_reference="false">array</type>
+        </tag>
+        <tag line="147" name="package" description="thunder-plugin-sliderknob"/>
+      </docblock>
+      <argument line="156">
+        <name>$atts</name>
+        <default/>
+        <type/>
+      </argument>
+      <argument line="156">
+        <name>$content</name>
+        <default>null</default>
+        <type/>
+      </argument>
+    </function>
+  </file>
+  <package name="thunder-plugin-sliderknob"/>
+  <namespace name="default"/>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>
